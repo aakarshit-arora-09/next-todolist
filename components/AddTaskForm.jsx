@@ -1,12 +1,11 @@
 import { useState } from "react";
 import styles from "./addtaskform.module.css";
-const AddTaskForm = ({ taskList, setTaskList, idCounter, setIdCounter }) => {
+const AddTaskForm = ({ taskList, setTaskList }) => {
   const [newTask, setNewTask] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIdCounter(idCounter + 1);
-    setTaskList([...taskList, { id: String(idCounter), content: newTask }]);
+    setTaskList([...taskList, { id: String(Date.now()), content: newTask }]);
     setNewTask("");
   };
   return (
