@@ -1,0 +1,38 @@
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  height: 45px;
+  padding-left: 0.5rem;
+  align-items: center;
+  border: solid 1px lightgray;
+  background-color: rgba(240, 239, 239, 0.7);
+  border-radius: 5px;
+  margin: 0.2rem 0;
+  vertical-align: top;
+}
+.taskList {
+  margin: 0.5rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: hidden;
+  padding: 1.2rem;
+  width: 100%;
+}
+.deletebtn {
+  color: #ffffff;
+  background: #dc3545;
+  text-decoration: none;
+  width: 15%;
+  height: 43px;
+  border: none;
+  vertical-align: top;
+  border-radius: 5px;
+}
+
+.deletebtn:hover {
+  background: #f9283d;
+  text-decoration: none;
+}
