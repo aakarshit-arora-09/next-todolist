@@ -3,14 +3,32 @@ import { FaTrashAlt } from "react-icons/fa";
 const List = ({ taskList, setTaskList }) => {
   const handleDelete = (e) => {
     const id = e.target.parentNode.id;
+    // console.log(id);
     const newTaskList = taskList.filter((task) => id !== task.id);
+    setTaskList(newTaskList);
+  };
+  const handleChange = (e) => {
+    const newid = e.target.parentElement.id;
+    const newcontent = e.target.value;
+    const newTaskList = taskList.map((task) => {
+      if (task.id === newid) {
+        return { id: newid, content: newcontent };
+      } else {
+        return task;
+      }
+    });
     setTaskList(newTaskList);
   };
   return (
     <div className={styles.taskList}>
       {taskList.map((task) => (
         <div className={styles.listItem} key={task.id} id={task.id}>
-          <p>{task.content}</p>
+          <input
+            className={styles.taskcontent}
+            type="text"
+            value={task.content}
+            onInput={(e) => handleChange(e)}
+          />
           <button onClick={handleDelete} className={styles.deletebtn}>
             <FaTrashAlt />
           </button>

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TitleBar from "../components/TitleBar";
 import List from "../components/List";
 import AddTaskForm from "../components/AddTaskForm";
@@ -6,6 +6,7 @@ import AddTaskForm from "../components/AddTaskForm";
 export default function Home() {
   const [taskList, setTaskList] = useState([]);
   const [idCounter, setIdCounter] = useState(1);
+
   return (
     <div className="App">
       <TitleBar taskList={taskList} />

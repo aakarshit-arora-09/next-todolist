@@ -36,3 +36,12 @@
   background: #f9283d;
   text-decoration: none;
 }
+.taskcontent {
+  background-color: inherit;
+  border: none;
+  width: 80%;
+}
+.taskcontent:focus {
+  border: none;
+  outline: none;
+}
