@@ -4,8 +4,9 @@ import List from "../components/List";
 import AddTaskForm from "../components/AddTaskForm";
 
 export default function Home() {
-  const [taskList, setTaskList] = useState([]);
+  const [taskList, setTaskList] = useState([]); //hook for list of tasks
 
+  //get data from local storage when component mounts
   useEffect(() => {
     const newTaskList = JSON.parse(localStorage.getItem("taskList"));
     if (newTaskList) {
@@ -13,6 +14,7 @@ export default function Home() {
     }
   }, []);
 
+  //set data to local storage when list changes
   useEffect(() => {
     if (taskList.length) {
       localStorage.setItem("taskList", JSON.stringify(taskList));

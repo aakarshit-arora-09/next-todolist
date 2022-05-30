@@ -2,6 +2,7 @@ import styles from "./list.module.css";
 import { FaTrashAlt } from "react-icons/fa";
 
 const List = ({ taskList, setTaskList }) => {
+  //delete task from list
   const handleDelete = (e) => {
     const id = e.target.id;
     const newTaskList = taskList.filter((task) => id !== task.id);
@@ -10,7 +11,7 @@ const List = ({ taskList, setTaskList }) => {
       localStorage.setItem("taskList", JSON.stringify(newTaskList));
     }
   };
-
+  //edit task already in the list
   const handleChange = (e) => {
     const newid = e.target.parentElement.id;
     const newcontent = e.target.value;
