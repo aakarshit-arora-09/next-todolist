@@ -1,5 +1,6 @@
 import styles from "./list.module.css";
 import { FaTrashAlt } from "react-icons/fa";
+
 const List = ({ taskList, setTaskList }) => {
   const handleDelete = (e) => {
     const id = e.target.id;
@@ -9,6 +10,7 @@ const List = ({ taskList, setTaskList }) => {
       localStorage.setItem("taskList", JSON.stringify(newTaskList));
     }
   };
+
   const handleChange = (e) => {
     const newid = e.target.parentElement.id;
     const newcontent = e.target.value;
@@ -21,6 +23,7 @@ const List = ({ taskList, setTaskList }) => {
     });
     setTaskList(newTaskList);
   };
+
   return (
     <div className={styles.taskList}>
       {taskList.map((task) => (
@@ -29,7 +32,7 @@ const List = ({ taskList, setTaskList }) => {
             className={styles.taskcontent}
             type="text"
             value={task.content}
-            onInput={(e) => handleChange(e)}
+            onInput={handleChange}
           />
           <button
             onClick={handleDelete}

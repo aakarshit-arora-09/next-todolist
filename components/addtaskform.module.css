@@ -1,5 +1,7 @@
 .form {
   width: 100%;
+  /* margin: 0.2rem; */
+  display: block;
 }
 .input {
   width: 75%;

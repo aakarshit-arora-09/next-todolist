@@ -15,9 +15,8 @@
   margin: 0.5rem 0rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  overflow: hidden;
+  overflow-y: auto;
   padding: 1.2rem;
   width: 100%;
 }
@@ -40,6 +39,7 @@
   background-color: inherit;
   border: none;
   width: 80%;
+  text-overflow: ellipsis;
 }
 .taskcontent:focus {
   border: none;
