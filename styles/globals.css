@@ -1,9 +1,11 @@
+html {
+  height: 100%;
+}
 body {
   background-image: linear-gradient(to right, #8360c3, #2ebf91);
-
+  background-repeat: no-repeat;
   font-size: 1.1rem;
   font-family: "Roboto", sans-serif;
-  height: 100%;
 }
 a {
   color: inherit;
@@ -32,4 +34,11 @@ a {
   margin: auto;
   box-shadow: 5px 5px 5px grey;
   padding: 1rem;
+}
+@media (max-width: 768px) {
+  .App {
+    width: 80vw;
+    height: 80vh;
+    border-radius: 5px;
+  }
 }
